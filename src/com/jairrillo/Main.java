@@ -50,6 +50,24 @@ public class Main {
 									.map(City::getId)
 									.collect(Collectors.toList());
 		ids.forEach(s -> System.out.println(s));
+		
+		// Map
+		System.out.println("\n-----MAP-----");
+		List<Developer> developers = new ArrayList<>();
+		developers.add(new Developer("João"));
+		developers.add(new Developer("Maria"));
+		developers.add(new Developer("Pedrinho"));
+		
+		List<String> developersName = developers.stream()
+												.map(Developer::getName)
+												.collect(Collectors.toList());
+		developersName.forEach(System.out::println);
+		
+		Long c = developers.stream()
+				.map(Developer::getName)
+				.count();		
+		System.out.println(c);
+		
 									
 	}
 
